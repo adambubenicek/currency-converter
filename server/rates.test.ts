@@ -11,6 +11,7 @@ describe("parse", () => {
           "United Kingdom|pound|1|GBP|26.890",
           "USA|dollar|1|USD|22.216",
           "Japan|yen|100|JPY|16.759",
+          "",
         ].join("\n")
       )
     ).toEqual([
@@ -45,6 +46,7 @@ describe("parse", () => {
           "13 Feb 2023 #31",
           "Country|Currency|Amount|Code|Rate",
           "United Kingdom|pound|1|missing_column",
+          "",
         ].join("\n")
       )
     ).toThrow();
@@ -55,6 +57,7 @@ describe("parse", () => {
           "13 Feb 2023 #31",
           "Country|Currency|Amount|Code|Rate",
           "United Kingdom|pound|not_a_number|GBP|26.890",
+          "",
         ].join("\n")
       )
     ).toThrow();
