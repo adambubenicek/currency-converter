@@ -11,6 +11,8 @@
     "start:client": "npm run start --workspace=client",
     "start:server": "npm run start --workspace=server",
     "start": "run-p start:* --print-label",
+    "test:server": "npm run test --workspace=server",
+    "test": "run-s test:* --print-label",
     "prepare": "husky install"
   },
   "workspaces": [
