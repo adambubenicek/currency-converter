@@ -8,9 +8,7 @@
     "build:client": "npm run build --workspace=client",
     "build:server": "npm run build --workspace=server",
     "build": "run-s build:* --print-label",
-    "start:client": "npm run start --workspace=client",
-    "start:server": "npm run start --workspace=server",
-    "start": "run-p start:* --print-label",
+    "start": "npm run start --workspace=server",
     "test:server": "npm run test --workspace=server",
     "test": "run-s test:* --print-label",
     "prepare": "husky install"

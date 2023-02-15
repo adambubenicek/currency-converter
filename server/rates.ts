@@ -1,4 +1,8 @@
 import { z } from "zod";
+import axios from "axios";
+
+const URL =
+  "https://www.cnb.cz/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt";
 
 const Rate = z.object({
   country: z.string(),
@@ -29,4 +33,10 @@ export function parse(ratesString: string): Rate[] {
         rate,
       });
     });
+}
+
+export async function fetchRates(): Promise<Rate[]> {
+  const response = await axios.get(URL);
+
+  return parse(response.data);
 }

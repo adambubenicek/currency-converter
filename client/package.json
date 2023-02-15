@@ -3,11 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --port 3000",
-    "build": "tsc && vite build",
-    "start": "vite preview --port 3000"
+    "dev": "vite",
+    "build": "tsc && vite build"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.24.6",
+    "@trpc/client": "^10.11.1",
+    "@trpc/react-query": "^10.11.1",
+    "@trpc/server": "^10.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
