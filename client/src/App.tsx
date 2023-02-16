@@ -1,18 +1,26 @@
-import { trpc } from "./trpc";
+import styled from "styled-components";
+import Converter from "./Converter";
+import RatesTable from "./RatesTable";
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 34px;
+  gap: 34px;
+
+  @media (min-width: 987px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 55px;
+    gap: 55px;
+  }
+`;
 
 function App() {
-  const rates = trpc.rates.useQuery();
-
-  if (!rates.data) {
-    return <div>Is loading</div>;
-  }
-
   return (
-    <div>
-      {rates.data.map((rate) => (
-        <div key={rate.country}>{rate.country}</div>
-      ))}
-    </div>
+    <Container>
+      <Converter />
+      <RatesTable />
+    </Container>
   );
 }
 

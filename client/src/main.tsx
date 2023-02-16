@@ -4,6 +4,7 @@ import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 import { trpc } from "./trpc";
+import "./global.css";
 
 const queryClient = new QueryClient();
 const trpcClient = trpc.createClient({

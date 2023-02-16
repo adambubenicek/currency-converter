@@ -12,7 +12,7 @@ const Rate = z.object({
   rate: z.number(),
 });
 
-type Rate = z.infer<typeof Rate>;
+export type Rate = z.infer<typeof Rate>;
 
 export function parse(ratesString: string): Rate[] {
   return ratesString
